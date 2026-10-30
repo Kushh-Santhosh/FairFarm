@@ -1,0 +1,45 @@
+FAIRFARM PRODUCT VERIFICATION SUMMARY
+Generated at: 2026-10-30T13:19:07.635Z
+Team: FENSTA
+Product: FAIRFARM — The smarter way from farm to fair price.
+
+1. Recommendation Engine Benchmark:
+   - Benchmark crop: 1,000 kg Tomatoes (Hoskote to Bengaluru Hub / Kolar)
+   - Option 1 (Local Village Trader): Gross ₹10,000 | Exp ₹500 | Net: ₹9,500
+   - Option 2 (Nearby APMC Mandi):   Gross ₹12,000 | Exp ₹1,500 | Net: ₹10,500
+   - Option 3 (Distant Buyer):       Gross ₹14,000 | Exp ₹3,000 | Net: ₹11,000
+   - Option 4 (FPO Collective):      Gross ₹14,000 | Exp ₹1,150 | Net: ₹12,850
+   - Dynamic Winner: FPO Collective Selling (Hoskote Tomato Collective)
+   - Benchmark Status: PASSED (FPO recommended with ₹12,850 net earnings)
+   - Difference over local trader: +₹3,350 (+35.3%)
+   - Difference over distant solo buyer: +₹1,850 (+16.8% via shared transport savings)
+
+2. Financial & Recommendation Regression Suite:
+   - Total Tests Executed: 27
+   - Passed: 27
+   - Failed: 0
+   - Zero-quantity guard: Verified (net/kg = 0)
+   - Negative quantity sanitization: Verified
+   - Multi-component expenses: 8 distinct expense categories deducted exactly once
+
+3. Transparency & Market Data Attribution:
+   - Mandi trends labeled: SIMULATED DEMO DATA (Modeled on AGMARKNET Mandi Bulletin)
+   - Buyer marketplace offers labeled: BUYER-SUBMITTED OFFER
+   - FPO aggregation pools labeled: SIMULATED DEMO DATA (FPO Logistics Pool)
+
+4. Multilingual & Voice Accessibility:
+   - Languages supported: Kannada, Telugu, Tamil, Hindi, English
+   - Telugu greeting: FAIRFARM కు స్వాగతం (Verified pure Telugu script)
+   - Speech Synthesis: Runs via browser Web Speech API without microphone permission
+   - Speech Recognition: Requests mic access only upon explicit user toggle click
+   - IVR Simulation: Transparently designated as in-browser emulation with DTMF audio tones
+
+5. Code & Build Integrity:
+   - TypeScript Check (npx tsc --noEmit): 0 errors
+   - Vite Production Build (npm run build): 0 errors (1.25s)
+   - Express Backend API: Online (Port 5001), 6 endpoints operational
+   - Browser Console Runtime Errors: 0 detected
+
+6. Visual & Responsive Compliance:
+   - Desktop Resolution (1440x900): Bounded, zero overlap
+   - Mobile Resolution (375x812): 0 horizontal overflow, safe bottom nav clearance

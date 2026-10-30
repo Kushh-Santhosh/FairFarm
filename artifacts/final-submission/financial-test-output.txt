@@ -1,0 +1,48 @@
+================================================================
+   FAIRFARM COMPREHENSIVE FINANCIAL & RECOMMENDATION TEST SUITE 
+================================================================
+
+--- Suite 1: Mandatory Benchmark Scenario (All 4 Options) ---
+  [PASS] Test 1: Local trader net = ₹9,500 (got ₹9500)
+  [PASS] Test 2: Nearby Mandi net = ₹10,500 (got ₹10500)
+  [PASS] Test 3: Distant Buyer net = ₹11,000 (got ₹11000)
+  [PASS] Test 4: FPO Collective Selling net = ₹12,850 (got ₹12850)
+  [PASS] Test 5: FPO Collective dynamically recommended as highest net earner (wins with ₹12,850)
+  [PASS] Test 6: Max net earnings reported as ₹12,850 (got ₹12850)
+  [PASS] Test 7: Net difference over local trader is exactly ₹3,350 (got ₹3350)
+  [PASS] Test 8: Net difference over distant buyer is exactly ₹1,850 (got ₹1850)
+
+--- Suite 2: Eligibility & Ineligibility Logic ---
+  [PASS] Test 9: FPO Collective eligibility confirmed for 1,000 kg (min requirement: 100 kg)
+  [PASS] Test 10: FPO correctly marked ineligible for 50 kg with clear reason: "Minimum 100 kg batch required to join shared transport pooling"
+  [PASS] Test 11: Distant buyer correctly marked ineligible for 50 kg wholesale requirement
+  [PASS] Test 12: Recommendation engine dynamically selects best eligible option (local trader) for small 50 kg batch
+
+--- Suite 3: Collective Selling Opt-Out (Farmer Filter) ---
+  [PASS] Test 13: FPO marked ineligible when farmer opts out of collective pooling
+  [PASS] Test 14: Distant Buyer dynamically wins with ₹11,000 when collective selling is excluded
+  [PASS] Test 15: Distant Buyer provides +₹1,500 over local trader when collective selling is excluded
+
+--- Suite 4: Dynamic Reversals & Price/Expense Changes ---
+  [PASS] Test 16: Local Trader dynamically wins when local price increases to ₹16/kg (Net: ₹15,500)
+  [PASS] Test 17: Distant Buyer dynamically beats FPO when wholesale offer surges to ₹18/kg (Net: ₹15,000 vs ₹12,850)
+  [PASS] Test 18: Nearby Mandi dynamically wins during severe freight crisis (Net: ₹10,500)
+
+--- Suite 5: Expense Deduction Integrity ---
+  [PASS] Test 19: Gross revenue correctly calculated as ₹20,000
+  [PASS] Test 20: Every expense component summed exactly once to ₹2,500
+  [PASS] Test 21: Net earnings correctly equals gross minus all deductions (₹17,500)
+  [PASS] Test 22: Net earnings per kg equals ₹17.50/kg
+
+--- Suite 6: Edge Cases & Sanitization ---
+  [PASS] Test 23: Zero quantity protected from division by zero (netEarningsPerKg: 0)
+  [PASS] Test 24: Negative quantity sanitized safely without NaN or crash
+  [PASS] Test 25: Decimal quantity 1,250.5 kg produces clean rounded integers (Gross: ₹17507, Net: ₹16068)
+  [PASS] Test 26: Bulk 100,000 kg scales to gross ₹14,00,000 without integer overflow (Net: ₹12,85,000)
+  [PASS] Test 27: Missing expense properties default safely to 0 without NaN
+
+================================================================
+TOTAL TESTS: 27 | PASSED: 27 | FAILED: 0
+================================================================
+
+>>> ALL 27 FINANCIAL & RECOMMENDATION TESTS PASSED WITH ZERO ERRORS! <<<
